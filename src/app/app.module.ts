@@ -5,10 +5,12 @@ import {AppComponent} from './app.component';
 import {MatCardModule} from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { PlunkPipe } from './plunk.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    PlunkPipe
   ],
   imports: [
     BrowserModule,

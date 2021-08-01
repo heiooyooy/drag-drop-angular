@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { Component } from '@angular/core';
+import { CdkDragDrop, moveItemInArray, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-root',
@@ -9,6 +9,11 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 export class AppComponent {
   title = 'Drag & Drop in Angular 7';
   website = 'https://samorgill.com';
+
+  containers = [
+    { id: 1 },
+    { id: 2 }
+  ]
 
   todos = [
     {
@@ -58,5 +63,9 @@ export class AppComponent {
         event.container.data,
         event.previousIndex, event.currentIndex);
     }
+  }
+
+  dropContainer(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.containers, event.previousIndex, event.currentIndex);
   }
 }
